@@ -34,8 +34,6 @@ for method in "${GLM[@]}"; do
 done
 ```
 
----
-
 ## ⚙️ Important Arguments
 
 | Argument | Description |
@@ -46,9 +44,6 @@ done
 | --cl_type | class / domain / task |
 | --hyperparam_search | enable search |
 | --ntrail | repeat runs |
-
-
-```
 
 ---
 
