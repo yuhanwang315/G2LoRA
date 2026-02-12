@@ -1,0 +1,95 @@
+default:
+  gnn: 'GCN'
+  seed: [0, 1, 2, 3, 4]
+  epochs: 300
+  valid_epoch: 10
+  lr: 1e-4
+  weight_decay: 5e-4
+  layer_num: 2
+  hidden_dim: 128
+  dropout: 0.5
+  patience: 20
+  batch_size: 256
+  num_heads: 4 # only available for GATConv
+  aggr: 'mean' # ['mean', 'max', 'lstm'], only available for SAGEConv
+search_space:
+  gnn: ['GCN', 'SAGE']
+  lr: [1e-5, 1e-4, 1e-3]
+  hidden_dim: [64, 128]
+best_cora:
+  gnn: GCN
+  lr: '1e-4'
+  hidden_dim: 64
+  _meta:
+    updated_at: '2025-04-24T06:49:35.387931'
+    metrics:
+      Iso. Avg ACC: '0.3978'
+      Iso. Avg FGT: '-0.7267'
+      Jot. Avg ACC: '0.6754'
+      Jot. Last ACC: '0.3714'
+best_citeseer:
+  gnn: SAGE
+  lr: '1e-3'
+  hidden_dim: 64
+  _meta:
+    updated_at: '2025-04-24T06:50:35.008811'
+    metrics:
+      Iso. Avg ACC: '0.2083'
+      Iso. Avg FGT: '-0.6750'
+      Jot. Avg ACC: '0.4350'
+      Jot. Last ACC: '0.2500'
+best_wikics:
+  gnn: GCN
+  lr: '1e-5'
+  hidden_dim: 64
+  _meta:
+    updated_at: '2025-04-24T06:54:40.899976'
+    metrics:
+      Iso. Avg ACC: '0.5262'
+      Iso. Avg FGT: '-0.3731'
+      Jot. Avg ACC: '0.6392'
+      Jot. Last ACC: '0.4540'
+best_photo:
+  gnn: GCN
+  lr: '1e-5'
+  hidden_dim: 64
+  _meta:
+    updated_at: '2025-04-24T07:10:01.602617'
+    metrics:
+      Iso. Avg ACC: '0.2867'
+      Iso. Avg FGT: '-0.6506'
+      Jot. Avg ACC: '0.6089'
+      Jot. Last ACC: '0.2615'
+best_products:
+  gnn: GCN
+  lr: '1e-5'
+  hidden_dim: 128
+  _meta:
+    updated_at: '2025-04-24T07:20:51.343939'
+    metrics:
+      Iso. Avg ACC: '0.1011'
+      Iso. Avg FGT: '-0.1512'
+      Jot. Avg ACC: '0.3897'
+      Jot. Last ACC: '0.2005'
+best_arxiv_23:
+  gnn: GCN
+  lr: '1e-5'
+  hidden_dim: 64
+  _meta:
+    updated_at: '2025-04-24T07:31:50.376773'
+    metrics:
+      Iso. Avg ACC: '0.1047'
+      Iso. Avg FGT: '-0.1873'
+      Jot. Avg ACC: '0.2259'
+      Jot. Last ACC: '0.0557'
+best_arxiv:
+  gnn: SAGE
+  lr: '1e-5'
+  hidden_dim: 64
+  _meta:
+    updated_at: '2025-05-04T17:34:16.432357'
+    metrics:
+      Iso. Avg ACC: '0.0247'
+      Iso. Avg FGT: '-0.6338'
+      Jot. Avg ACC: '0.1333'
+      Jot. Last ACC: '0.0068'

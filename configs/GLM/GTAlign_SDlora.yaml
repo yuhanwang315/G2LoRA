@@ -1,0 +1,104 @@
+default:
+  lm: 'LLaMA'
+  seed: [0, 1, 2, 3, 4]
+  epochs: 500
+  valid_epoch: 2
+  warmup_epochs: 1
+  lr: 1e-5
+  min_lr: 5e-6
+  grad_steps: 2
+  weight_decay: 5e-2
+  dropout: 0.1
+  att_dropout: 0.1
+  patience: 5
+  batch_size: 256
+  max_length: 512
+  lm_type: 'sentence-transformers/all-MiniLM-L6-v2'
+  # LoRA:
+  #   use_lora: True
+  #   lora_r: 5
+  #   lora_alpha: 16
+  #   lora_dropout: 0.05
+  islora_g: true
+  islora_t: true
+  T: 1.0
+  sample_num: 50
+  hop: [20, 20]
+  mode: 'neighbors' # ['neighbors', 'ego', 'pure']
+  include_label: false
+  max_node_text_len: 128
+
+search_space:
+  lr: [1e-3, 1e-4, 2e-4, 5e-4, 1e-5]
+best_photo:
+  lr: '1e-3'
+  _meta:
+    updated_at: '2026-01-12T17:55:26.688204'
+    metrics:
+      Iso. Avg ACC: '0.8219'
+      Iso. Avg FGT: '-0.0275'
+      Jot. Avg ACC: '0.6766'
+      Jot. Last ACC: '0.5483'
+best_computer(jieou +lamda 没缩放):
+  lr: '1e-4'
+  _meta:
+    updated_at: '2025-12-18T14:41:54.266080'
+    metrics:
+      Iso. Avg ACC: '0.8171'
+      Iso. Avg FGT: '-0.0416'
+      Jot. Avg ACC: '0.5792'
+      Jot. Last ACC: '0.4252'
+best_history:
+  lr: '2e-4'
+  _meta:
+    updated_at: '2026-01-22T12:51:16.254523'
+    metrics:
+      Iso. Avg ACC: '0.7818'
+      Iso. Avg FGT: '-0.0328'
+      Jot. Avg ACC: '0.1000'
+      Jot. Last ACC: '0.1000'
+best_cora+citeseer:
+  lr: '1e-4'
+  _meta:
+    updated_at: '2025-12-18T20:27:28.933300'
+    metrics:
+      Iso. Avg ACC: '0.6289'
+      Iso. Avg FGT: '-0.0586'
+      Jot. Avg ACC: '0.6249'
+      Jot. Last ACC: '0.5185'
+best_cora+citeseer+wikics:
+  lr: '5e-4'
+  _meta:
+    updated_at: '2026-01-11T02:20:49.604491'
+    metrics:
+      Iso. Avg ACC: '0.6884'
+      Iso. Avg FGT: '-0.0320'
+      Jot. Avg ACC: '0.5786'
+      Jot. Last ACC: '0.4822'
+best_computer:
+  lr: '2e-4'
+  _meta:
+    updated_at: '2026-01-12T13:13:11.274653'
+    metrics:
+      Iso. Avg ACC: '0.8503'
+      Iso. Avg FGT: '0.0172'
+      Jot. Avg ACC: '0.6186'
+      Jot. Last ACC: '0.5620'
+best_wikics+cora+bbbp:
+  lr: '1e-4'
+  _meta:
+    updated_at: '2026-01-19T09:26:54.471563'
+    metrics:
+      Iso. Avg ACC: '0.5779'
+      Iso. Avg FGT: '-0.0634'
+      Jot. Avg ACC: '0.5971'
+      Jot. Last ACC: '0.5779'
+best_cora+wikics+photo:
+  lr: '1e-3'
+  _meta:
+    updated_at: '2026-01-21T02:11:51.019511'
+    metrics:
+      Iso. Avg ACC: '0.7236'
+      Iso. Avg FGT: '-0.0152'
+      Jot. Avg ACC: '0.7324'
+      Jot. Last ACC: '0.7236'

@@ -1,0 +1,59 @@
+default:
+  lm: 'LLaMA'
+  seed: [0, 1, 2, 3, 4]
+  epochs: 50
+  valid_epoch: 2
+  warmup_epochs: 1
+  lr: 1e-5
+  min_lr: 5e-6
+  grad_steps: 2
+  weight_decay: 5e-2
+  dropout: 0.1
+  att_dropout: 0.1
+  patience: 5
+  batch_size: 256
+  max_length: 512
+  lm_type: 'sentence-transformers/all-MiniLM-L6-v2'
+  # LoRA:
+  #   use_lora: True
+  #   lora_r: 5
+  #   lora_alpha: 16
+  #   lora_dropout: 0.05
+  islora_g: true
+  islora_t: true
+  T: 1.0
+  sample_num: 50
+  hop: [20, 20]
+  mode: 'neighbors' # ['neighbors', 'ego', 'pure']
+  include_label: false
+  max_node_text_len: 128
+
+search_space:
+  lr: [1e-4, 2e-4, 5e-4, 1e-5]
+best_photo:
+  lr: '1e-4'
+  _meta:
+    updated_at: '2025-12-18T11:33:49.793686'
+    metrics:
+      Iso. Avg ACC: '0.7873'
+      Iso. Avg FGT: '-0.0534'
+      Jot. Avg ACC: '0.6693'
+      Jot. Last ACC: '0.5785'
+best_computer(jieou +lamda 没缩放):
+  lr: '1e-4'
+  _meta:
+    updated_at: '2025-12-18T14:41:54.266080'
+    metrics:
+      Iso. Avg ACC: '0.8171'
+      Iso. Avg FGT: '-0.0416'
+      Jot. Avg ACC: '0.5792'
+      Jot. Last ACC: '0.4252'
+best_history:
+  lr: '2e-4'
+  _meta:
+    updated_at: '2025-12-18T08:03:28.089814'
+    metrics:
+      Iso. Avg ACC: '0.7128'
+      Iso. Avg FGT: '-0.0175'
+      Jot. Avg ACC: '0.4887'
+      Jot. Last ACC: '0.4024'

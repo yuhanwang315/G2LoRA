@@ -1,0 +1,41 @@
+default:
+  lm: 'LLaMA' # ['RoBERTa', 'LLaMA']
+  seed: [0, 1, 2, 3, 4]
+  cache: '/data/root/LLM4GCL-main/LLM4GCL/embeddings/hidden_states/'
+  lr: 5e-5
+  weight_decay: 5e-4
+  epochs: 500
+  valid_epoch: 10
+  patience: 20
+  batch_size: 256
+  cache_batch_size: 30
+  max_length: 256
+
+  gnn: 'GCN'
+  layer_num: 1
+  hidden_dim: 64
+  dropout: 0.5
+  num_heads: 4 # only available for GATConv
+  aggr: 'mean' # ['mean', 'max', 'lstm'], only available for SAGEConv
+
+  engine_layer_select: [0, 6, 12, 18, 24, -1]
+  engine_T: 0.1
+  engine_r: 32
+search_space:
+  lr: [1e-5, 1e-4]
+  gnn: ['GCN', 'SAGE']
+  hidden_dim: [64, 128, 256]
+  engine_r: [1, 32]
+best_cora+citeseer:
+  lr: '1e-5'
+  gnn: GCN
+  hidden_dim: 256
+  engine_r: 1
+  _meta:
+    updated_at: '2025-12-11T15:29:24.098525'
+    metrics:
+      Iso. Avg ACC: '0.7800'
+      Iso. Avg FGT: '0.0286'
+      Jot. Avg ACC: '0.7911'
+      Jot. Last ACC: '0.7808'
+  # engine_layer_select: [0,5,10,15,20,-1]

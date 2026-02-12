@@ -1,0 +1,29 @@
+default:
+  lm: 'LLaMA'
+  seed: [0, 1, 2, 3, 4]
+  epochs: 500
+  valid_epoch: 2
+  warmup_epochs: 1
+  lr: 1e-5
+  min_lr: 5e-6
+  grad_steps: 2
+  weight_decay: 5e-2
+  dropout: 0.1
+  att_dropout: 0.1
+  patience: 5
+  batch_size: 32
+  max_length: 512
+  lm_type: 'sentence-transformers/all-MiniLM-L6-v2'
+  islora_g: true
+  islora_t: true
+  T: 1.0
+  sample_num: 50
+  hop: [20, 20]
+  mode: 'neighbors' # ['neighbors', 'ego', 'pure']
+  include_label: false
+  max_node_text_len: 128
+
+search_space:
+  lr: [1e-3, 1e-4, 2e-4, 5e-4, 1e-5]
+
+
