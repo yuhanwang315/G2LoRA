@@ -1,5 +1,4 @@
 # G2LoRA
----
 
 ## ▶️ Quick Start
 
@@ -48,19 +47,7 @@ done
 | --hyperparam_search | enable search |
 | --ntrail | repeat runs |
 
----
 
-## 📂 Project Structure
-
-```
-G2LoRA/
-├── models/
-├── scripts/
-├── datasets/
-├── configs/
-├── utils/
-├── main.py
-└── README.md
 ```
 
 ---
