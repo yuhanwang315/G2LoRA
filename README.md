@@ -28,7 +28,7 @@ for method in "${GLM[@]}"; do
             --model "$method" \
             --cl_type class \
             --task_type FSNCIL \
-            > "${output_dir}/${dataset}.txt"
+             --ntrail 5 > "$output_file"
 
     done
 done
