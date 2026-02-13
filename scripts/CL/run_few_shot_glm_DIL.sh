@@ -2,7 +2,7 @@
 declare -A methods
 # GLM=('LM_emb' 'ENGINE' 'GraphPrompter' 'GraphGPT' 'LLaGA' 'SimGCL' 'GTAlign')
 # datasets=('photo' 'computer' 'history')
-GLM=('G2P2')
+GLM=('GTAlign')
 datasets=('cora+citeseer+wikics')
 
 
