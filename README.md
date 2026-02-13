@@ -57,9 +57,10 @@ for method in "${GLM[@]}"; do
     done
 done
 ```
-```
+
 
 ### 2. DIL Setting
+## ▶️ Quick Start
 
 ```bash
 GLM=('GTAlign')
@@ -92,9 +93,11 @@ for method in "${GLM[@]}"; do
     done
 done
 ```
-```
 
-### 2. TIL Setting
+
+
+### 3. TIL Setting
+## ▶️ Quick Start
 
 ```bash
 GLM=('GTAlign')
