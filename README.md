@@ -136,4 +136,6 @@ for method in "${GLM[@]}"; do
 done
 ```
 
-### we will release code and data upon acceptance.
+### We release the core implementation of G2LoRA. 
+### The complete codebase and datasets will be released upon acceptance.
+
