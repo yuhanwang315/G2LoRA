@@ -134,5 +134,6 @@ for method in "${GLM[@]}"; do
             --type "$type" 
     done
 done
+```
 
-we will release code and data upon acceptance.
+### we will release code and data upon acceptance.
